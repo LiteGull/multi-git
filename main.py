@@ -1,7 +1,9 @@
 import os
 import git
-
 import argparse
+import logging
+
+logger = logging.getLogger(__name__)
 
 parser = argparse.ArgumentParser(description='Process some integers.')
 parser.add_argument('--git_command', help='git command to run e.g. Push/Pull')
@@ -45,17 +47,17 @@ class GitRepo:
         global repo_pull
         repo_pull = git_repo.push_repo(r)
         if repo_pull is True:
-            print("{r} has successfully pushed the repo".format(r=r))
+            logger.info("{r} has successfully pushed the repo".format(r=r))
         else:
-            print("{r} has failed to push the repo".format(r=r))
+            logger.info("{r} has failed to push the repo".format(r=r))
 
     def pull_req(self):
         global repo_pull
         repo_pull = git_repo.pull_repo(r)
         if repo_pull is True:
-            print("{r} has successfully pulled the repo".format(r=r))
+            logger.info("{r} has successfully pulled the repo".format(r=r))
         else:
-            print("{r} has failed to pull the repo".format(r=r))
+            logger.info("{r} has failed to pull the repo".format(r=r))
 
 
 if __name__ == "__main__":
