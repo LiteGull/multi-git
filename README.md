@@ -1,4 +1,4 @@
-# Multi-git
+# multigit
 
 ### Introduction
 
