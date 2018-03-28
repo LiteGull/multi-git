@@ -11,7 +11,7 @@ class GitRepo:
         dir_path = os.getcwd()
         return dir_path
 
-    def list_all(self):
+    def listdir(self):
         dir = self.get_cwd()
         return os.listdir(dir)
 
@@ -30,13 +30,14 @@ class GitRepo:
 
     def list_all_git_repos(self):
         repos = []
-        for repo in self.list_all():
+        for repo in self.listdir():
             if self.is_git_repo(repo=repo) is True:
                 repos.append({'repo': repo, 'remote': self.get_remote(repo)})
         return repos
 
 
 class GitCommand:
+
     def pull(self, repo):
         try:
             repo['remote'].pull()

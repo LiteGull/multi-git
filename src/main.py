@@ -16,7 +16,9 @@ def main():
     git_repo = GitRepo()
     command = GitCommand()
     repos = git_repo.list_all_git_repos()
+    logger.info("git repositories in current directory {}".format(repos))
     for repo in repos:
+        logger.info("Running git command on {} repository".format(repo['repo']))
         if args.git_command == "pull":
             command.pull(repo)
         elif args.git_command == "push":
