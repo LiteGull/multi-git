@@ -1,7 +1,7 @@
 import unittest
 import os
 
-from multigit.main import GitRepo
+from src.git_repos import GitRepo
 
 
 class TestDirectory(unittest.TestCase):
