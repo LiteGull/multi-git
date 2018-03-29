@@ -5,5 +5,5 @@ setup(name='multigit',
       description='Python Distribution Utilities',
       author='Ryan Dutton',
       url='https://github.com/LiteGull/multigit',
-      packages=['gitpython', 'src'],
+      packages=['src'],
       )
