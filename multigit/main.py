@@ -1,7 +1,5 @@
 import os
-import git
 import argparse
-import logging
 
 from log import logger_setup
 from git_repos import GitRepo, GitCommand
@@ -13,16 +11,16 @@ args = parser.parse_args()
 
 def main():
     logger.info(" --- multigit --- ")
+    
     git_repo = GitRepo()
-    command = GitCommand()
+    command = GitCommand(command=args.git_command)
+    
     repos = git_repo.list_all_git_repos()
     logger.info("git repositories in current directory {}".format(repos))
+    
     for repo in repos:
-        logger.info("Running git command on {} repository".format(repo['repo']))
-        if args.git_command == "pull":
-            command.pull(repo)
-        elif args.git_command == "push":
-            command.push(repo)
+        logger.debug("Running git command on {} repository".format(repo['repo']))
+        command.execute(repo)
 
 
 if __name__ == "__main__":

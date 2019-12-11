@@ -13,6 +13,6 @@ git@github.com:LiteGull/multigit.git
 ```
 Then set an alias in your ~/.bashrc (or where ever you create your alias) which points executes the src/main.py:
 ```
-alias multigit="python3 ~/path-to-dir/multigit/src/main.py"
+alias multigit="python3 ~/path-to-dir/multigit/multigit/main.py"
 ```
 This will then execute the code in the current working directory and depending on which command you pass through push/pull, it will execute that command for each git repository in the current working directory.
